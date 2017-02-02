@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ashiro's Site</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Welcome my dear {{ username }}</h1>
+    <ul>
+      {{ for i in range(10) }}
+        <li>This is list #{{ i }}</li>
+      {{ endfor }}
+    </ul>
+  </body>
+</html>
