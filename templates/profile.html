@@ -6,11 +6,15 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
   </head>
   <body>
-    <h1>Welcome my dear {{ username }}</h1>
+    {% if username %}
+      <h1>Welcome my dear {{ username }}</h1>
+    {% else %}
+      <h1>Please login</h1>
+    {% endif %}
     <ul>
-      {{ for i in range(10) }}
+      {% for i in range(10) %}
         <li>This is list #{{ i }}</li>
-      {{ endfor }}
+      {% endfor %}
     </ul>
   </body>
 </html>

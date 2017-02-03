@@ -1,9 +1,16 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,abort,request
 app = Flask(__name__)
+
+banList = ["10.16.0.246"]
+
+@app.before_request
+def limit_remote_addr():
+    if request.remote_addr in banList:
+        abort(403)  # Forbidden
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("blog.html")
 
 @app.route('/user/')
 @app.route('/user/<username>')
