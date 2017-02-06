@@ -5,6 +5,9 @@
     <title>Ashiro's Numbers</title>
   </head>
   <body>
+    {% if wrong %}
+      <p><strong>Please enter NUMBERS ONLY</strong></p>
+    {% endif %}
     <form action="/numbers" method="post">
       <p><label><strong>First Number:</strong></label><br>
       <input type="text" name="num1"></p>

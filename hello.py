@@ -1,4 +1,5 @@
 from flask import Flask,render_template,abort,request
+import os
 app = Flask(__name__)
 
 banList = [] #Insert IPs
@@ -20,14 +21,20 @@ def show_user_profile(username=None):
     return render_template("profile.html",username=username)
 
 @app.route('/numbers',methods=['GET','POST'])
-def numbers():
+def numbers(wrong=0):
     total = ''
     if request.method == 'POST':
-        num1 = int(request.form['num1'])
-        num2 = int(request.form['num2'])
-        return "The sum of {} and {}".format(num1,num2) + " is {}".format(str(num1+num2))
+        try:
+            num1 = int(request.form['num1'])
+            num2 = int(request.form['num2'])
+            wrong=0
+        except ValueError:
+            wrong=1
+            return render_template("numbers.html",wrong=wrong)
+        result = num1 + num2
+        return render_template("numbersResult.html",num1=num1,num2=num2,result=result)
     else:
-        return render_template("numbers.html")
+        return render_template("numbers.html",wrong=wrong)
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
@@ -49,4 +56,6 @@ def chat():
     return "Chat in develop"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True,host='0.0.0.0', port=port)
