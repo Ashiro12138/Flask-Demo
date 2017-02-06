@@ -13,7 +13,7 @@ def limit_remote_addr():
 def index():
     #return "Welcome to the index"
     #return render_template("blog.html")
-    return render_template('form.html')
+    return render_template('form.html') #The old /mess
 
 @app.route('/user/')
 @app.route('/user/<username>')
@@ -44,12 +44,6 @@ def show_post(post_id):
 @app.route('/blog/<int:page>')
 def show_blog(page=1):
     return render_template("blog.html")
-
-@app.route('/mess',methods=['POST'])
-def mess():
-    title = request.form['title']
-    mess = request.form['post']
-    return "<h1>"+title+"</h1>"+"<br>"+"<p>"+mess+"</p>"
 
 @app.route('/chat/')
 def chat():
