@@ -1,7 +1,7 @@
 from flask import Flask,render_template,abort,request
 app = Flask(__name__)
 
-banList = ["10.16.0.246"]
+banList = []
 
 @app.before_request
 def limit_remote_addr():
@@ -31,4 +31,6 @@ def about():
     return 'The about page'
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True,
+            host="0.0.0.0"
+            )
