@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Ashiro's Numbers</title>
     <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
   </head>
   <body>
-    <form action="{{ url_for('numbers') }}", method="get">
+    <form action="{{ url_for('numbers') }}", method="GET" novalidate>
       <p>The sum of {{ num1 }} and {{ num2 }} is <strong>{{ result }}</strong></p>
-      <input type="submit" value="Try Again?">
+      <p><a href={{ url_for('numbers') }}>Try Again</a></p>
     </form>
   </body>
 </html>

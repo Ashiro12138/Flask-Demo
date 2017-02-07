@@ -1,4 +1,4 @@
-from flask import Flask,render_template,abort,request
+from flask import Flask,render_template,abort,request,redirect,url_for
 import os
 app = Flask(__name__)
 
@@ -13,7 +13,15 @@ def limit_remote_addr():
 def index():
     #return "Welcome to the index"
     #return render_template("blog.html")
-    return render_template('form.html') #The old /mess
+    return render_template('form.html')
+
+@app.route('/mess',methods=['GET','POST'])
+def mess():
+    if request.method == 'GET':
+        return redirect(url_for('index'),code=301)
+    title = request.form['title']
+    post = request.form['post']
+    return render_template('formResult.html',title=title,post=post)
 
 @app.route('/user/')
 @app.route('/user/<username>')
@@ -51,5 +59,6 @@ def chat():
 
 if __name__ == "__main__":
     # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True,host='0.0.0.0', port=port)
+    #port = int(os.environ.get('PORT', 5000))
+    #app.run(debug=True,host='0.0.0.0', port=port)
+    app.run(debug=True)
