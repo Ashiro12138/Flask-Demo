@@ -3,8 +3,10 @@ from werkzeug.utils import secure_filename
 from werkzeug import SharedDataMiddleware
 import os
 
-UPLOAD_FOLDER = r'C:\Users\24618\Documents\AAA-Term 1\AAA-IPT\Python\PY35\Flask-Demo\uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+# UPLOAD_FOLDER = r'C:\Users\24618\Documents\AAA-Term 1\AAA-IPT\Python\PY35\Flask-Demo\uploads'
+UPLOAD_FOLDER = os.getcwd()+r'\uploads'
+
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','doc','docx'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -92,7 +94,7 @@ def upload_file():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+        if file and allowed_file(file.filename): #Remove this line and indent the lines under it to allow all file types
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('uploaded_file',filename=filename))
