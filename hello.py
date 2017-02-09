@@ -11,8 +11,11 @@ def limit_remote_addr():
 
 @app.route('/')
 def index():
-    #return "Welcome to the index"
     #return render_template("blog.html")
+    return render_template('index.html')
+
+@app.route('/form')
+def form():
     return render_template('form.html')
 
 @app.route('/mess',methods=['GET','POST'])
@@ -44,8 +47,9 @@ def numbers(wrong=0):
     else:
         return render_template("numbers.html",wrong=wrong)
 
+@app.route('/post/')
 @app.route('/post/<int:post_id>')
-def show_post(post_id):
+def show_post(post_id=1):
     return 'Post %d' % post_id
 
 @app.route('/blog/')
