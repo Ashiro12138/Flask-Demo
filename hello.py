@@ -75,6 +75,7 @@ def show_blog(page=1):
 @app.route('/chat/')
 def chat():
     return "Chat in develop"
+    
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
