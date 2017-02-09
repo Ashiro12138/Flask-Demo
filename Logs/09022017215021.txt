@@ -1,0 +1,35 @@
+[Command: python -u 'C:\Users\24618\Documents\AAA-Term 1\AAA-IPT\Python\PY35\Flask-Demo\hello.py']
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 266-251-308
+192.168.0.10 - - [09/Feb/2017 21:50:21] "GET / HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:21] "GET /static/style.css HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:21] "GET /static/favicon.ico HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:22] "GET /form HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:28] "POST /mess HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:32] "GET /numbers HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:38] "POST /numbers HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:40] "GET /numbers HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:43] "GET /blog/ HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:44] "GET /static/w3images/woods.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:44] "GET /static/w3images/bridge.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:44] "GET /static/w3images/workshop.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:45] "GET /static/w3images/gondol.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:45] "GET /static/w3images/rock.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:45] "GET /static/w3images/skies.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:45] "GET /static/w3images/avatar_g.jpg HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:56] "GET /upload HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:57] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.0.10 - - [09/Feb/2017 21:50:58] "GET /upload HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:50:59] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.0.10 - - [09/Feb/2017 21:51:00] "GET /chat/ HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:51:00] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.0.10 - - [09/Feb/2017 21:51:01] "GET /upload HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:51:02] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.0.10 - - [09/Feb/2017 21:51:27] "POST /upload HTTP/1.1" 302 -
+192.168.0.10 - - [09/Feb/2017 21:51:27] "GET /uploads/Screenshot_2017-02-09-17-58-50.png HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:51:29] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.0.10 - - [09/Feb/2017 21:51:51] "POST /upload HTTP/1.1" 302 -
+192.168.0.10 - - [09/Feb/2017 21:51:51] "GET /uploads/Screenshot_2017-02-09-18-15-58.png HTTP/1.1" 200 -
+192.168.0.10 - - [09/Feb/2017 21:51:53] "GET /favicon.ico HTTP/1.1" 404 -
