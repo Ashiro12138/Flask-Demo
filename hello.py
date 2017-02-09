@@ -1,6 +1,13 @@
 from flask import Flask,render_template,abort,request,redirect,url_for
+from werkzeug.utils import secure_filename
 import os
+
+UPLOAD_FOLDER = '/uploads'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#http://flask.pocoo.org/docs/0.12/patterns/fileuploads/#uploading-files
 
 banList = [] #Insert IPs
 
@@ -60,6 +67,12 @@ def show_blog(page=1):
 @app.route('/chat/')
 def chat():
     return "Chat in develop"
+
+@app.route('/upload',methods=['GET','POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/uploads'+secure_filename(f.filename))
 
 if __name__ == "__main__":
     # Bind to PORT if defined, otherwise default to 5000.
