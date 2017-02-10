@@ -74,9 +74,20 @@ def show_post(post_id=1):
 def show_blog(page=1):
     return render_template("blog.html")
 
-@app.route('/chat/')
+@app.route('/chat',methods=['GET','POST'])
 def chat():
-    return "Chat in develop"
+    f = open(os.getcwd()+r'\chat\chat.txt')
+    l = [i.strip() for i in f]
+    txt = "\n".join(l)
+    return render_template("chat.html",txt=txt)
+
+@app.route('/chatSubmit',methods=["POST"])
+def chat_submit():
+    msg = request.form['msg']
+    f = open(os.getcwd()+r'\chat\chat.txt','a')
+    f.write("\n"+msg)
+    f.close()
+    return redirect(url_for("chat"),code=301)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
