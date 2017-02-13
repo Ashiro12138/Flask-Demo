@@ -74,6 +74,10 @@ def show_post(post_id=1):
 def show_blog(page=1):
     return render_template("blog.html")
 
+#For chat app, have a look at this:
+#https://blog.miguelgrinberg.com/post/easy-websockets-with-flask-and-gevent
+#And this http://callmephilip.github.io/chatzilla/
+
 @app.route('/chat',methods=['GET','POST'])
 def chat():
     f = open(os.getcwd()+r'\chat\chat.txt')
