@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+ul {
+  background-color: skyblue;
+  padding: 0;
+}
+
+a {
+  padding: 20px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
+nav > ul > li {
+  display: inline-block;
+}
+
+nav > ul > li > ul {
+  background-color: rgb(121, 185, 211);
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li ul{
+  position: absolute;
+}
+
+nav ul li:hover{
+  background-color: rgb(121, 185, 211);
+}
+
+nav ul li ul li:hover{
+  background-color: rgb(185, 211, 121)
+}
+
+nav ul li ul{
+  display: none;
+}
+
+nav ul li:hover ul{
+  display: block;
+}
+
+.banner{
+  width: auto;
+  height: auto;
+  background-color: #33FFBD;
+}
+
+.title{
+  padding: 50px 10px;
+}
