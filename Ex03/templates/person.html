@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Person Page
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
+</head>
+<body>
+  <div class="banner title">
+    <h1>Person Page</h1>
+  </div>  <nav>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('person') }}">Person</a></li>
+      <li><a href="{{ url_for('forum') }}">Forum Page</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
