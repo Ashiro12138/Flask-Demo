@@ -10,7 +10,7 @@
     {% endfor %}
     <form action="/chatSubmit" method="post">
       <p><label><strong>Post:</strong></label><br>
-      <textarea name="msg" rows="5" cols="40"></textarea></p>
+      <textarea name="msg" rows="5" cols="40" maxlength="100"></textarea></p>
       <input class="button" type="submit" value="Submit">
     </form>
   </body>

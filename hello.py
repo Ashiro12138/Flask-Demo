@@ -26,7 +26,7 @@ def limit_remote_addr():
     if request.remote_addr in banList:
         abort(403)  # Forbidden
 
-@app.route('/')
+@app.route('/',methods=["GET","POST"])
 def index():
     #return render_template("blog.html")
     return render_template('index.html')
@@ -89,7 +89,7 @@ def chat():
 def chat_submit():
     msg = request.form['msg']
     f = open(os.getcwd()+r'\chat\chat.txt','a')
-    f.write("\n"+msg)
+    f.write(request.remote_addr+": "+msg+"\n")
     f.close()
     return redirect(url_for("chat"),code=301)
 
