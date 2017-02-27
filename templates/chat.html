@@ -5,13 +5,13 @@
     <title>Ashiro's Chat</title>
   </head>
   <body>
+    <form action="/chatSubmit" method="post">
+      <p><label><strong>Post:</strong></label><br>
+      <textarea name="msg" rows="5" cols="40" maxlength="100"  wrap="hard" autofocus></textarea></p>
+      <input class="button" type="submit" value="Submit">
+    </form>
     {% for i in txt.split("\n") %}
       <p>{{ i }}</p><br>
     {% endfor %}
-    <form action="/chatSubmit" method="post">
-      <p><label><strong>Post:</strong></label><br>
-      <textarea name="msg" rows="5" cols="40" maxlength="100"></textarea></p>
-      <input class="button" type="submit" value="Submit">
-    </form>
   </body>
 </html>

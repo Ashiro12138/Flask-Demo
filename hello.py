@@ -8,6 +8,9 @@ UPLOAD_FOLDER = os.getcwd()+r'\uploads'
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','doc','docx'])
 
+IP2NAME = {"10.16.0.141":"Garry","10.100.38.141":"Ashiro","10.16.0.246":"rmcar17",
+            "10.16.0.131":"Jack","10.16.0.149":"Mitch"}
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -82,6 +85,7 @@ def show_blog(page=1):
 def chat():
     f = open(os.getcwd()+r'\chat\chat.txt')
     l = [i.strip() for i in f]
+    l.reverse()
     txt = "\n".join(l)
     return render_template("chat.html",txt=txt)
 
@@ -89,7 +93,7 @@ def chat():
 def chat_submit():
     msg = request.form['msg']
     f = open(os.getcwd()+r'\chat\chat.txt','a')
-    f.write(request.remote_addr+": "+msg+"\n")
+    f.write(IP2NAME.get(str(request.remote_addr),str(request.remote_addr))+": "+msg+"\n")
     f.close()
     return redirect(url_for("chat"),code=301)
 
